@@ -1,6 +1,6 @@
 {
-  "id": "/nginx",
-  "cmd": "cd /opt/bitnami/nginx && nami initialize nginx && cp /mnt/mesos/sandbox/nginx/*.conf /bitnami/nginx/conf/vhosts/ && nami start --foreground nginx",
+  "id": "/nginxrouter",
+  "cmd": "cd /opt/bitnami/nginx && nami initialize nginx && cp /mnt/mesos/sandbox/misc-master/nginx/*.conf /bitnami/nginx/conf/vhosts/ && nami start --foreground nginx",
   "cpus": 1,
   "mem": 1024,
   "disk": 0,
@@ -46,7 +46,7 @@
   },
   "fetch": [
     {
-      "uri": "http://172.16.5.140:7777/nginx.tar",
+      "uri": "https://github.com/arbhoj/misc/archive/master.zip",
       "extract": true,
       "executable": false,
       "cache": false
