@@ -46,7 +46,7 @@
   },
   "fetch": [
     {
-      "uri": "https://github.com/arbhoj/misc/blob/master/nginx/nginx-to-edgelb.tar",
+      "uri": "http://172.16.5.140:7777/nginx.tar",
       "extract": true,
       "executable": false,
       "cache": false
