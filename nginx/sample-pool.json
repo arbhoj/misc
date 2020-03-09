@@ -1,0 +1,29 @@
+{
+  "apiVersion": "V2",
+  "name": "mytest",
+  "count": 2,
+  "haproxy": {
+    "frontends": [{
+      "bindPort": 80,
+      "protocol": "HTTP",
+      "linkBackend": {
+        "defaultBackend": "app-backend"
+      }
+    }],
+    "backends": [{
+      "name": "app-backend",
+      "protocol": "HTTP",
+      "services": [{
+        "marathon": {
+          "serviceID": "/auto-pool-one"
+        },
+        "endpoint": {
+          "type": "ADDRESS",
+          "address": "service-one.marathon.l4lb.thisdcos.directory",
+          "port": 10001
+        }
+      }]
+    }]
+  }
+}
+

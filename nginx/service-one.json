@@ -1,0 +1,33 @@
+{
+  "id": "/service-one",
+  "cmd": "/start $PORT0 one",
+  "container": {
+    "type": "DOCKER",
+    "volumes": [],
+    "docker": {
+      "image": "mesosphere/id-server:2.1.0",
+      "forcePullImage": false,
+      "privileged": false,
+      "parameters": []
+    },
+    "portMappings": [
+      {
+        "containerPort": 0,
+        "hostPort": 0,
+        "labels": {
+          "VIP_0": "/service-one:10001"
+        },
+        "protocol": "tcp",
+        "name": "id"
+      }
+    ]
+  },
+  "cpus": 0.1,
+  "instances": 1,
+  "mem": 32,
+  "networks": [
+    {
+      "mode": "container/bridge"
+    }
+  ]
+}
